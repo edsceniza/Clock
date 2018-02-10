@@ -56,10 +56,11 @@ class StopwatchActivity : AppCompatActivity() {
             Seconds = Seconds % 60
 
             MilliSeconds = (UpdateTime % 1000).toInt()
+            MilliSeconds = MilliSeconds/10
 
-            textView.text = ("" + Minutes + ":"
-                    + java.lang.String.format("%02d", Seconds) + ":"
-                    + java.lang.String.format("%03d", MilliSeconds))
+            textView.text = ("" + java.lang.String.format("%02d", Minutes) + ":"
+                    + java.lang.String.format("%02d", Seconds) + "."
+                    + MilliSeconds)
 
             handler.postDelayed(this, 0)
         }
@@ -111,7 +112,7 @@ class StopwatchActivity : AppCompatActivity() {
             Minutes = 0
             MilliSeconds = 0
 
-            textView.text = "00:00:00"
+            textView.text = "00:00.00"
 
             ListElementsArrayList.clear()
 
