@@ -30,7 +30,12 @@
             android:name=".RingtoneService"
             android:enabled="true" />
 
-        <activity android:name=".StopwatchActivity"></activity>
+        <activity android:name=".StopwatchActivity"
+            android:label="Stopwatch">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
     </application>
 
 </manifest>
